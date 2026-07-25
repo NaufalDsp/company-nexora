@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Detail Sela House</title>
+  <desc id="desc">Studi kisi vertikal, cahaya, dan pertemuan material.</desc>
+  <rect width="900" height="1100" fill="#e8e8e2"/>
+  <path d="M110 90h680v920H110z" fill="#c4c5bf"/>
+  <path d="M140 120h350v860H140z" fill="#252623"/>
+  <path d="M520 120h240v860H520z" fill="#b95d39"/>
+  <g fill="#f5f3ec">
+    <path d="M550 160h22v780h-22z"/><path d="M608 160h22v780h-22z"/>
+    <path d="M666 160h22v780h-22z"/><path d="M724 160h22v780h-22z"/>
+  </g>
+  <path d="M140 750h350v230H140z" fill="#111210"/>
+</svg>

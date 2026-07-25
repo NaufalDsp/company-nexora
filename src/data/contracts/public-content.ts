@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { Portfolio, Project } from "./portfolio";
 
 export const serviceIconSchema = z.enum([
   "armchair",
@@ -24,6 +25,10 @@ export const processStepSchema = z.object({
   description: z.string().min(1),
 });
 
+const internalHrefSchema = z
+  .string()
+  .refine((href) => href.startsWith("#") || href.startsWith("/"));
+
 export const landingPageContentSchema = z.object({
   conceptNotice: z.string().min(1),
   hero: z.object({
@@ -32,9 +37,9 @@ export const landingPageContentSchema = z.object({
     highlightedTitle: z.string().min(1),
     description: z.string().min(1),
     primaryCtaLabel: z.string().min(1),
-    primaryCtaHref: z.string().startsWith("#"),
+    primaryCtaHref: internalHrefSchema,
     secondaryCtaLabel: z.string().min(1),
-    secondaryCtaHref: z.string().startsWith("#"),
+    secondaryCtaHref: internalHrefSchema,
     capabilities: z
       .array(
         z.object({
@@ -61,7 +66,7 @@ export const landingPageContentSchema = z.object({
     title: z.string().min(1),
     description: z.string().min(1),
     ctaLabel: z.string().min(1),
-    ctaHref: z.string().startsWith("#"),
+    ctaHref: internalHrefSchema,
   }),
 });
 
@@ -71,4 +76,6 @@ export type LandingPageContent = z.infer<typeof landingPageContentSchema>;
 
 export type PublicContentRepository = {
   getLandingPageContent: () => Promise<LandingPageContent>;
+  getPortfolio: () => Promise<Portfolio>;
+  getProjectBySlug: (slug: string) => Promise<Project | null>;
 };

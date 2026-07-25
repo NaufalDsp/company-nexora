@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Detail Ember Eatery</title>
+  <desc id="desc">Studi meja, material, dan penanda ruang restoran.</desc>
+  <rect width="900" height="1100" fill="#111210"/>
+  <path d="M95 90h710v920H95z" fill="#252623"/>
+  <path d="M130 125h640v310H130z" fill="#b95d39"/>
+  <path d="M180 175h540v210H180z" fill="#191a18"/>
+  <path d="M160 590h580v95H160z" fill="#858780"/>
+  <path d="M210 685h38v210h-38zm442 0h38v210h-38z" fill="#c4c5bf"/>
+  <circle cx="450" cy="545" r="28" fill="#e8a182"/>
+</svg>

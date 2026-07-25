@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Sela House</title>
+  <desc id="desc">Ilustrasi arsitektural ruang hunian dengan bidang beton dan cahaya tembaga.</desc>
+  <rect width="1200" height="800" fill="#1a1b18"/>
+  <path d="M90 690h1020V155H450v135H90z" fill="#252623" stroke="#858780" stroke-width="2"/>
+  <path d="M90 690h1020L930 510H270z" fill="#111210"/>
+  <path d="M450 155h480v355H450z" fill="#30312d"/>
+  <path d="M470 175h245v315H470z" fill="#111210"/>
+  <path d="M735 175h175v315H735z" fill="#b95d39"/>
+  <path d="M765 220h115v270H765z" fill="#e8a182" opacity=".42"/>
+  <path d="M270 510h660L780 690H150z" fill="#595b56" opacity=".55"/>
+</svg>

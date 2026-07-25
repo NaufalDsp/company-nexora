@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Rivet Workspace</title>
+  <desc id="desc">Ilustrasi ruang kerja modular dengan panel gelap dan permukaan kayu hangat.</desc>
+  <rect width="1200" height="800" fill="#111210"/>
+  <path d="M110 130h980v540H110z" fill="#252623" stroke="#595b56" stroke-width="2"/>
+  <g fill="#595b56">
+    <path d="M150 170h210v390H150z"/><path d="M390 170h210v390H390z"/>
+    <path d="M630 170h210v390H630z"/><path d="M870 170h180v390H870z"/>
+  </g>
+  <path d="M190 510h760l140 160H110z" fill="#191a18"/>
+  <path d="M290 470h470v48H290z" fill="#b95d39"/>
+  <path d="M340 518h28v110h-28zm350 0h28v110h-28z" fill="#858780"/>
+  <circle cx="900" cy="255" r="75" fill="#f5f3ec" opacity=".85"/>
+</svg>

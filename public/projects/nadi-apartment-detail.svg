@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Detail Nadi Apartment</title>
+  <desc id="desc">Studi penyimpanan terintegrasi dan furnitur multifungsi.</desc>
+  <rect width="900" height="1100" fill="#f5f3ec"/>
+  <path d="M80 80h740v940H80z" fill="#c4c5bf"/>
+  <path d="M120 120h315v860H120z" fill="#595b56"/>
+  <path d="M465 120h315v410H465z" fill="#e8e8e2"/>
+  <path d="M465 560h315v420H465z" fill="#252623"/>
+  <path d="M510 620h225v105H510z" fill="#b95d39"/>
+  <path d="M160 165h235v340H160z" fill="#111210"/>
+</svg>

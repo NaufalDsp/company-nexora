@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Detail Rivet Workspace</title>
+  <desc id="desc">Studi panel akustik modular dan pencahayaan ruang kerja.</desc>
+  <rect width="900" height="1100" fill="#191a18"/>
+  <g fill="#595b56">
+    <path d="M90 90h210v400H90z"/><path d="M345 90h210v400H345z"/><path d="M600 90h210v400H600z"/>
+  </g>
+  <g fill="#858780">
+    <circle cx="150" cy="160" r="10"/><circle cx="240" cy="160" r="10"/>
+    <circle cx="405" cy="160" r="10"/><circle cx="495" cy="160" r="10"/>
+    <circle cx="660" cy="160" r="10"/><circle cx="750" cy="160" r="10"/>
+  </g>
+  <path d="M90 585h720v330H90z" fill="#252623"/>
+  <path d="M145 650h610v75H145z" fill="#b95d39"/>
+  <path d="M185 725h28v140h-28zm502 0h28v140h-28z" fill="#c4c5bf"/>
+</svg>
