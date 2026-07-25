@@ -2,13 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 import { BrandLogo } from "../brand/BrandLogo";
-
-const navigationItems = [
-  { href: "/#beranda", label: "Beranda" },
-  { href: "/#layanan", label: "Layanan" },
-  { href: "/portfolio", label: "Portofolio" },
-  { href: "/#proses", label: "Proses" },
-] as const;
+import { navigationItems } from "./navigation-items";
 
 export function MobileMenu() {
   const dialogRef = useRef<HTMLDialogElement>(null);
