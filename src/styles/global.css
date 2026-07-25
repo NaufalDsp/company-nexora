@@ -1705,6 +1705,11 @@ h3 {
     display: none;
   }
 
+  .navbar__menu-button {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
   .hero__layout {
     gap: 2rem;
     padding-block: 7.25rem 12rem;
