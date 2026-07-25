@@ -30,7 +30,7 @@ const internalHrefSchema = z
   .refine((href) => href.startsWith("#") || href.startsWith("/"));
 
 export const landingPageContentSchema = z.object({
-  conceptNotice: z.string().min(1),
+  serviceStatement: z.string().min(1),
   hero: z.object({
     eyebrow: z.string().min(1),
     title: z.string().min(1),

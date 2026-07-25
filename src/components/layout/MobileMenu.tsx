@@ -95,7 +95,7 @@ export function MobileMenu() {
 
           <div className="mobile-menu__footer">
             <p>Renovation &amp; Interior</p>
-            <span>Studio konsep / 2026</span>
+            <span>Design &amp; Build / 2026</span>
           </div>
         </div>
       </dialog>

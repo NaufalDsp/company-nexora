@@ -1,8 +1,8 @@
 import { landingPageContentSchema } from "../../contracts/public-content";
 
 export const landingPageFixture = landingPageContentSchema.parse({
-  conceptNotice:
-    "Seluruh nama proyek dan materi pada website ini merupakan data konsep fiktif.",
+  serviceStatement:
+    "Perencanaan terukur. Material terkurasi. Pelaksanaan terkoordinasi.",
   hero: {
     eyebrow: "RENOVATION · INTERIOR · DESIGN & BUILD",
     title: "Membangun ulang ruang",
@@ -24,7 +24,7 @@ export const landingPageFixture = landingPageContentSchema.parse({
       },
       {
         label: "Status",
-        value: "Studio Konsep",
+        value: "Konsultasi Terbuka",
       },
     ],
   },
@@ -32,8 +32,8 @@ export const landingPageFixture = landingPageContentSchema.parse({
     label: "Tentang Nexora",
     title: "Dari struktur mentah menuju ruang yang terasa utuh.",
     paragraphs: [
-      "Nexora Space adalah studio konsep renovasi dan interior yang memandang ruang sebagai sistem: struktur, sirkulasi, material, pencahayaan, dan kebiasaan penggunanya harus bekerja bersama.",
-      "Setiap keputusan dimulai dari kebutuhan nyata, diterjemahkan ke rancangan yang jelas, lalu disusun menjadi proses pengerjaan yang dapat dipahami.",
+      "Nexora Space adalah perusahaan renovasi dan interior yang memandang ruang sebagai satu kesatuan: struktur, sirkulasi, material, pencahayaan, dan kebiasaan penggunanya harus bekerja bersama.",
+      "Kami memulai setiap proyek dari kebutuhan nyata, menerjemahkannya menjadi rancangan yang jelas, lalu mengelola pelaksanaannya melalui proses yang terstruktur.",
     ],
     principles: [
       "Fungsi sebelum dekorasi",
@@ -153,8 +153,8 @@ export const landingPageFixture = landingPageContentSchema.parse({
     eyebrow: "MULAI DARI KEBUTUHAN",
     title: "Punya ruang yang perlu ditata ulang?",
     description:
-      "Siapkan gambaran lokasi, fungsi ruang, dan prioritas utama. Form konsultasi akan tersedia setelah integrasi data lead selesai.",
-    ctaLabel: "Lihat alur kerja",
+      "Ceritakan lokasi, fungsi ruang, dan prioritas utama Anda. Tim kami akan membantu menyusun langkah awal yang sesuai dengan kebutuhan proyek.",
+    ctaLabel: "Pelajari proses kami",
     ctaHref: "#proses",
   },
 });

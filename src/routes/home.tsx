@@ -17,7 +17,7 @@ export function meta() {
     {
       name: "description",
       content:
-        "Nexora Space adalah konsep company profile renovasi dan interior dengan pendekatan arsitektural, premium, dan presisi.",
+        "Nexora Space menghadirkan layanan renovasi, desain interior, custom furniture, dan design and build dengan proses yang terukur.",
     },
   ];
 }
@@ -47,8 +47,8 @@ export default function HomePage({ loaderData }: Route.ComponentProps) {
   return (
     <main data-mode={dataMode} id="main-content" tabIndex={-1}>
       <HeroSection
-        conceptNotice={content.conceptNotice}
         content={content.hero}
+        serviceStatement={content.serviceStatement}
       />
       <AboutSection content={content.about} />
       <ServicesSection services={content.services} />

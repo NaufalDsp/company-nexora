@@ -57,7 +57,7 @@ export default function ProjectDetailPage({
               <dd>{project.completionYear}</dd>
             </div>
             <div>
-              <dt>Luas konsep</dt>
+              <dt>Luas proyek</dt>
               <dd>{project.areaSize} m²</dd>
             </div>
           </dl>
@@ -98,7 +98,7 @@ export default function ProjectDetailPage({
       <section className="project-gallery">
         <Container>
           <div className="project-gallery__heading">
-            <p className="eyebrow">GALERI KONSEP</p>
+            <p className="eyebrow">GALERI PROYEK</p>
             <h2>Bidang, proporsi, dan detail material.</h2>
           </div>
           <div className="project-gallery__grid">

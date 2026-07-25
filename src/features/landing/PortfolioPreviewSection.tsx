@@ -18,7 +18,7 @@ export function PortfolioPreviewSection({
         <Container>
           <div className="portfolio-preview__heading">
             <div>
-              <p className="eyebrow eyebrow--dark">05 / PORTOFOLIO KONSEP</p>
+              <p className="eyebrow eyebrow--dark">05 / PORTOFOLIO PILIHAN</p>
               <h2>Ruang yang menjelaskan cara kami berpikir.</h2>
             </div>
             <a href="/portfolio">

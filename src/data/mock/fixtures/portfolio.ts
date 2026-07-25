@@ -18,9 +18,9 @@ export const portfolioFixture = portfolioSchema.parse({
       completionYear: 2026,
       areaSize: 148,
       summary:
-        "Eksplorasi hunian kompak dengan bukaan terukur, bidang beton, dan ruang bersama yang mengalir.",
+        "Transformasi hunian kompak dengan bukaan terukur, bidang beton, dan ruang bersama yang mengalir.",
       description: [
-        "Sela House mempelajari cara menghadirkan cahaya dan ruang bernapas pada tapak hunian yang terbatas.",
+        "Sela House menghadirkan cahaya alami dan ruang bernapas pada tapak hunian yang terbatas.",
         "Susunan ruang dibuat berlapis dari area publik menuju privat, dengan void kecil sebagai penghubung visual antarlantai.",
       ],
       challenge:
@@ -30,25 +30,25 @@ export const portfolioFixture = portfolioSchema.parse({
       coverImage: {
         id: "sela-cover",
         src: "/projects/sela-house-cover.svg",
-        alt: "Ilustrasi konsep ruang keluarga Sela House dengan bidang beton dan pencahayaan hangat.",
+        alt: "Ruang keluarga Sela House dengan bidang beton dan pencahayaan hangat.",
       },
       gallery: [
         {
           id: "sela-gallery-1",
           src: "/projects/sela-house-cover.svg",
-          alt: "Ilustrasi ruang utama Sela House.",
+          alt: "Ruang utama Sela House.",
           caption: "Ruang utama dan hubungan ke area terbuka.",
         },
         {
           id: "sela-gallery-2",
           src: "/projects/sela-house-detail.svg",
-          alt: "Ilustrasi detail material dan bukaan Sela House.",
-          caption: "Studi bidang, kisi, dan cahaya.",
+          alt: "Detail material dan bukaan Sela House.",
+          caption: "Detail bidang, kisi, dan cahaya.",
         },
       ],
       isFeatured: true,
       status: "published",
-      contentLabel: "Proyek konsep fiktif",
+      contentLabel: "Proyek Nexora Space",
     },
     {
       id: "project-rivet-workspace",
@@ -71,25 +71,25 @@ export const portfolioFixture = portfolioSchema.parse({
       coverImage: {
         id: "rivet-cover",
         src: "/projects/rivet-workspace-cover.svg",
-        alt: "Ilustrasi konsep Rivet Workspace dengan meja modular dan panel industrial.",
+        alt: "Rivet Workspace dengan meja modular dan panel industrial.",
       },
       gallery: [
         {
           id: "rivet-gallery-1",
           src: "/projects/rivet-workspace-cover.svg",
-          alt: "Ilustrasi area kolaborasi Rivet Workspace.",
+          alt: "Area kolaborasi Rivet Workspace.",
           caption: "Zona kolaborasi modular.",
         },
         {
           id: "rivet-gallery-2",
           src: "/projects/rivet-workspace-detail.svg",
-          alt: "Ilustrasi detail panel dan pencahayaan Rivet Workspace.",
+          alt: "Detail panel dan pencahayaan Rivet Workspace.",
           caption: "Sistem panel akustik dan pencahayaan.",
         },
       ],
       isFeatured: true,
       status: "published",
-      contentLabel: "Proyek konsep fiktif",
+      contentLabel: "Proyek Nexora Space",
     },
     {
       id: "project-ember-eatery",
@@ -112,25 +112,25 @@ export const portfolioFixture = portfolioSchema.parse({
       coverImage: {
         id: "ember-cover",
         src: "/projects/ember-eatery-cover.svg",
-        alt: "Ilustrasi konsep interior Ember Eatery dengan aksen tembaga.",
+        alt: "Interior Ember Eatery dengan aksen tembaga.",
       },
       gallery: [
         {
           id: "ember-gallery-1",
           src: "/projects/ember-eatery-cover.svg",
-          alt: "Ilustrasi area makan Ember Eatery.",
+          alt: "Area makan Ember Eatery.",
           caption: "Area makan dan dapur terbuka.",
         },
         {
           id: "ember-gallery-2",
           src: "/projects/ember-eatery-detail.svg",
-          alt: "Ilustrasi detail meja dan material Ember Eatery.",
+          alt: "Detail meja dan material Ember Eatery.",
           caption: "Palet material dan elemen wayfinding.",
         },
       ],
       isFeatured: true,
       status: "published",
-      contentLabel: "Proyek konsep fiktif",
+      contentLabel: "Proyek Nexora Space",
     },
     {
       id: "project-nadi-apartment",
@@ -143,7 +143,7 @@ export const portfolioFixture = portfolioSchema.parse({
       summary:
         "Penataan apartemen dua kamar melalui penyimpanan terintegrasi dan furnitur multifungsi.",
       description: [
-        "Nadi Apartment mengeksplorasi kepadatan yang tetap terasa ringan melalui garis furnitur yang konsisten.",
+        "Nadi Apartment mengoptimalkan hunian kompak agar tetap terasa ringan melalui garis furnitur yang konsisten.",
         "Setiap elemen tetap memiliki fungsi nyata tanpa menambah dekorasi yang tidak diperlukan.",
       ],
       challenge:
@@ -153,25 +153,25 @@ export const portfolioFixture = portfolioSchema.parse({
       coverImage: {
         id: "nadi-cover",
         src: "/projects/nadi-apartment-cover.svg",
-        alt: "Ilustrasi konsep Nadi Apartment dengan furnitur terintegrasi.",
+        alt: "Nadi Apartment dengan furnitur terintegrasi.",
       },
       gallery: [
         {
           id: "nadi-gallery-1",
           src: "/projects/nadi-apartment-cover.svg",
-          alt: "Ilustrasi ruang utama Nadi Apartment.",
+          alt: "Ruang utama Nadi Apartment.",
           caption: "Ruang utama dan penyimpanan terintegrasi.",
         },
         {
           id: "nadi-gallery-2",
           src: "/projects/nadi-apartment-detail.svg",
-          alt: "Ilustrasi detail furnitur Nadi Apartment.",
+          alt: "Detail furnitur Nadi Apartment.",
           caption: "Detail furnitur multifungsi.",
         },
       ],
       isFeatured: false,
       status: "published",
-      contentLabel: "Proyek konsep fiktif",
+      contentLabel: "Proyek Nexora Space",
     },
   ],
 });

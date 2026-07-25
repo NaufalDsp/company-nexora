@@ -6,11 +6,11 @@ import type { Route } from "./+types/portfolio";
 
 export function meta() {
   return [
-    { title: "Portofolio Konsep | Nexora Space" },
+    { title: "Portofolio | Nexora Space" },
     {
       name: "description",
       content:
-        "Jelajahi kumpulan proyek konsep fiktif renovasi dan interior Nexora Space.",
+        "Jelajahi portofolio renovasi, interior hunian, ruang kerja, dan ruang komersial yang dikerjakan Nexora Space.",
     },
   ];
 }
@@ -42,11 +42,11 @@ export default function PortfolioPage({ loaderData }: Route.ComponentProps) {
   return (
     <main className="portfolio-page" id="main-content" tabIndex={-1}>
       <Container className="portfolio-page__hero">
-        <p className="eyebrow">PORTOFOLIO / PROYEK KONSEP FIKTIF</p>
+        <p className="eyebrow">PORTOFOLIO / NEXORA SPACE</p>
         <h1>Ruang, material, dan sistem yang bekerja bersama.</h1>
         <p>
-          Eksplorasi desain berikut menggunakan data dan visual buatan untuk
-          mendemonstrasikan presentasi portfolio Nexora Space.
+          Setiap proyek berangkat dari kebutuhan yang berbeda dan diselesaikan
+          melalui perpaduan fungsi, material, serta detail yang terukur.
         </p>
       </Container>
 

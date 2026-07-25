@@ -21,8 +21,8 @@ export function Footer() {
         <div className="footer__bottom">
           <BrandLogo className="footer__brand" />
           <p>
-            Proyek company profile fiktif untuk demonstrasi pengembangan
-            frontend modern.
+            Mitra renovasi dan interior untuk hunian, ruang kerja, dan ruang
+            komersial yang dirancang secara terukur.
           </p>
           <span>© 2026 NEXORA SPACE</span>
         </div>

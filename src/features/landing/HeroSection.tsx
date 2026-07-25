@@ -7,11 +7,11 @@ import type { LandingPageContent } from "../../data/contracts/public-content";
 import "../../styles/hero-scroll.css";
 
 type HeroSectionProps = {
-  conceptNotice: string;
   content: LandingPageContent["hero"];
+  serviceStatement: string;
 };
 
-export function HeroSection({ conceptNotice, content }: HeroSectionProps) {
+export function HeroSection({ content, serviceStatement }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
@@ -34,7 +34,7 @@ export function HeroSection({ conceptNotice, content }: HeroSectionProps) {
               {content.secondaryCtaLabel}
             </ButtonLink>
           </div>
-          <p className="hero__disclaimer">{conceptNotice}</p>
+          <p className="hero__disclaimer">{serviceStatement}</p>
         </div>
 
         <div

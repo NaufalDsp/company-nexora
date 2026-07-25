@@ -29,7 +29,7 @@ export const projectSchema = z.object({
   gallery: z.array(projectImageSchema).min(1),
   isFeatured: z.boolean(),
   status: z.literal("published"),
-  contentLabel: z.literal("Proyek konsep fiktif"),
+  contentLabel: z.literal("Proyek Nexora Space"),
 });
 
 export const portfolioSchema = z.object({
