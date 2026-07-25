@@ -255,24 +255,42 @@ h3 {
 }
 
 .navbar__desktop-nav a {
+  position: relative;
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
-  gap: 0.45rem;
   color: var(--color-concrete-300);
-  font-size: 0.8125rem;
+  font-size: clamp(1rem, 1.15vw, 1.0625rem);
   font-weight: 600;
-  transition: color var(--duration-fast) var(--ease-standard);
+  letter-spacing: 0.01em;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
 }
 
-.navbar__desktop-nav a span {
-  color: var(--color-concrete-500);
-  font-family: var(--font-mono);
-  font-size: 0.5625rem;
+.navbar__desktop-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  left: 0;
+  height: 1px;
+  background: var(--color-accent-500);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-normal) var(--ease-standard);
 }
 
-.navbar__desktop-nav a:hover {
+.navbar__desktop-nav a:hover,
+.navbar__desktop-nav a:focus-visible {
   color: var(--color-bone-50);
+  transform: translateY(-0.125rem);
+}
+
+.navbar__desktop-nav a:hover::after,
+.navbar__desktop-nav a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .navbar__cta {
@@ -356,19 +374,22 @@ h3 {
   display: flex;
   min-height: 4.5rem;
   align-items: center;
-  gap: 1rem;
   border-bottom: 1px solid rgb(196 197 191 / 16%);
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-size: clamp(2.25rem, 9vw, 4rem);
   font-weight: 600;
   letter-spacing: -0.04em;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    padding-left var(--duration-normal) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
 }
 
-.mobile-menu__list a span {
-  color: var(--color-accent-500);
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0;
+.mobile-menu__list a:hover,
+.mobile-menu__list a:focus-visible {
+  padding-left: 0.75rem;
+  color: var(--color-accent-300);
+  background: rgb(185 93 57 / 8%);
 }
 
 .mobile-menu__footer {

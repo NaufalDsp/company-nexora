@@ -32,12 +32,9 @@ export function Navbar() {
 
         <nav className="navbar__desktop-nav" aria-label="Navigasi utama">
           <ul>
-            {navigationItems.map((item, index) => (
+            {navigationItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  {item.label}
-                </a>
+                <a href={item.href}>{item.label}</a>
               </li>
             ))}
           </ul>

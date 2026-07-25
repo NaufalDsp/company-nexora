@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { BrandLogo } from "../brand/BrandLogo";
 
 const navigationItems = [
-  { href: "/#beranda", label: "Beranda", number: "01" },
-  { href: "/#layanan", label: "Layanan", number: "02" },
-  { href: "/portfolio", label: "Portofolio", number: "03" },
-  { href: "/#proses", label: "Proses", number: "04" },
+  { href: "/#beranda", label: "Beranda" },
+  { href: "/#layanan", label: "Layanan" },
+  { href: "/portfolio", label: "Portofolio" },
+  { href: "/#proses", label: "Proses" },
 ] as const;
 
 export function MobileMenu() {
@@ -85,7 +85,6 @@ export function MobileMenu() {
               {navigationItems.map((item) => (
                 <li key={item.href}>
                   <a href={item.href} data-menu-close>
-                    <span>{item.number}</span>
                     {item.label}
                   </a>
                 </li>
