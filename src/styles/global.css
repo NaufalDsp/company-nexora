@@ -487,6 +487,50 @@ h3 {
   min-height: clamp(28rem, 58vw, 43rem);
 }
 
+.hero-scene {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-scene__fallback,
+.hero-scene__canvas {
+  position: absolute;
+  inset: 0;
+  transition: opacity var(--duration-slow) var(--ease-standard);
+}
+
+.hero-scene__canvas {
+  top: 12%;
+  right: 2%;
+  bottom: 5%;
+  left: 2%;
+  overflow: hidden;
+  border: 1px solid rgb(196 197 191 / 14%);
+  opacity: 0;
+}
+
+.hero-scene--ready .hero-scene__canvas {
+  opacity: 1;
+}
+
+.hero-scene--ready .hero-scene__fallback {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-scene__status {
+  position: absolute;
+  z-index: 3;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  color: var(--color-concrete-300);
+  background: rgb(17 18 16 / 72%);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
 .hero__coordinates {
   position: absolute;
   z-index: 2;

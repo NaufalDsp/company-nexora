@@ -1,6 +1,6 @@
-import { BrandLogo } from "../../components/brand/BrandLogo";
 import { ButtonLink } from "../../components/common/ButtonLink";
 import { Container } from "../../components/common/Container";
+import { HeroScene } from "../../components/three/HeroScene";
 import type { LandingPageContent } from "../../data/contracts/public-content";
 
 type HeroSectionProps = {
@@ -37,19 +37,7 @@ export function HeroSection({ conceptNotice, content }: HeroSectionProps) {
           role="img"
           aria-label="Ilustrasi abstrak ruang modular Nexora Space"
         >
-          <div className="hero__coordinates" aria-hidden="true">
-            <span>X / 06.214</span>
-            <span>Y / 11.210</span>
-          </div>
-          <div className="hero__frame" aria-hidden="true">
-            <div className="hero__plane hero__plane--back" />
-            <div className="hero__plane hero__plane--floor" />
-            <div className="hero__plane hero__plane--accent" />
-            <BrandLogo className="hero__mark" compact />
-          </div>
-          <p className="hero__visual-label" aria-hidden="true">
-            MODULAR ROOM / STATIC FALLBACK
-          </p>
+          <HeroScene />
         </div>
       </Container>
 
