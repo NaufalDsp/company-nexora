@@ -1,0 +1,47 @@
+import type { Route } from "./+types/home";
+import {
+  getPublicContentRepository,
+  getPublicDataMode,
+} from "../data/public-content-repository";
+import { AboutSection } from "../features/landing/AboutSection";
+import { ConsultationSection } from "../features/landing/ConsultationSection";
+import { HeroSection } from "../features/landing/HeroSection";
+import { ProcessSection } from "../features/landing/ProcessSection";
+import { ServicesSection } from "../features/landing/ServicesSection";
+
+export function meta() {
+  return [
+    { title: "Nexora Space | Renovation & Interior" },
+    {
+      name: "description",
+      content:
+        "Nexora Space adalah konsep company profile renovasi dan interior dengan pendekatan arsitektural, premium, dan presisi.",
+    },
+  ];
+}
+
+export async function loader() {
+  const repository = getPublicContentRepository();
+
+  return {
+    content: await repository.getLandingPageContent(),
+    dataMode: getPublicDataMode(),
+  };
+}
+
+export default function HomePage({ loaderData }: Route.ComponentProps) {
+  const { content, dataMode } = loaderData;
+
+  return (
+    <main data-mode={dataMode} id="main-content" tabIndex={-1}>
+      <HeroSection
+        conceptNotice={content.conceptNotice}
+        content={content.hero}
+      />
+      <AboutSection content={content.about} />
+      <ServicesSection services={content.services} />
+      <ProcessSection content={content.process} />
+      <ConsultationSection content={content.consultation} />
+    </main>
+  );
+}
