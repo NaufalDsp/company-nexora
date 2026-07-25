@@ -12,7 +12,7 @@ export function ProcessSection({ content }: ProcessSectionProps) {
       <Reveal>
         <Container className="process-section__layout">
           <div className="process-section__intro">
-            <p className="eyebrow">05 / PROSES</p>
+            <p className="eyebrow">06 / PROSES</p>
             <h2>{content.title}</h2>
             <p>{content.description}</p>
           </div>
