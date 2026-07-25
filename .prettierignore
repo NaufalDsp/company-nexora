@@ -1,0 +1,12 @@
+build/
+dist/
+node_modules/
+.react-router/
+coverage/
+playwright-report/
+test-results/
+docs/prd.md
+docs/desain.md
+AGENTS.md
+references/
+

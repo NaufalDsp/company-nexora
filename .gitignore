@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Repository-local instructions and planning material
+AGENTS.md
+docs/
+CREDITS.md
+README.md
+references/
+
+# Tests are intentionally not part of this dummy implementation
+tests/
+
+# Build and generated output
+build/
+dist/
+.react-router/
+coverage/
+playwright-report/
+test-results/
+.lighthouseci/
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Supabase local state
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# Tool caches
+.eslintcache
+.vite/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and operating systems
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# Generated media
+public/generated/
