@@ -1,4 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Link } from "react-router";
 
 import type { Project } from "../../data/contracts/portfolio";
 
@@ -13,9 +15,16 @@ export function ProjectCard({
   project,
   priority = false,
 }: ProjectCardProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <article className="project-card">
-      <a href={`/portfolio/${project.slug}`}>
+    <motion.article
+      className="project-card"
+      layout
+      transition={{ duration: shouldReduceMotion ? 0 : 0.45 }}
+      whileHover={{ y: -4 }}
+    >
+      <Link to={`/portfolio/${project.slug}`}>
         <div className="project-card__image">
           <img
             alt={project.coverImage.alt}
@@ -40,7 +49,7 @@ export function ProjectCard({
             {project.location} · {project.completionYear}
           </span>
         </div>
-      </a>
-    </article>
+      </Link>
+    </motion.article>
   );
 }

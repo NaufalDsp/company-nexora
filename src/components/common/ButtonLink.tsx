@@ -1,7 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
-import type { AnchorHTMLAttributes } from "react";
+import { motion, type HTMLMotionProps } from "motion/react";
+import type { ReactNode } from "react";
 
-type ButtonLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type ButtonLinkProps = Omit<HTMLMotionProps<"a">, "children"> & {
+  children: ReactNode;
   variant?: "primary" | "secondary";
 };
 
@@ -12,9 +14,13 @@ export function ButtonLink({
   ...props
 }: ButtonLinkProps) {
   return (
-    <a className={`button button--${variant} ${className}`.trim()} {...props}>
+    <motion.a
+      className={`button button--${variant} ${className}`.trim()}
+      whileTap={{ scale: 0.98 }}
+      {...props}
+    >
       <span>{children}</span>
       <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.8} />
-    </a>
+    </motion.a>
   );
 }

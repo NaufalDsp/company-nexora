@@ -1,4 +1,5 @@
 import { Container } from "../components/common/Container";
+import { Link } from "react-router";
 import { getPublicContentRepository } from "../data/public-content-repository";
 import { ProjectGrid } from "../features/portfolio/ProjectGrid";
 import type { Route } from "./+types/portfolio";
@@ -51,22 +52,22 @@ export default function PortfolioPage({ loaderData }: Route.ComponentProps) {
 
       <Container>
         <nav className="portfolio-filter" aria-label="Filter kategori proyek">
-          <a
+          <Link
             aria-current={activeCategory === null ? "page" : undefined}
-            href="/portfolio"
+            to="/portfolio"
           >
             Semua
-          </a>
+          </Link>
           {categories.map((category) => (
-            <a
+            <Link
               aria-current={
                 activeCategory === category.slug ? "page" : undefined
               }
-              href={`/portfolio?category=${category.slug}`}
+              to={`/portfolio?category=${category.slug}`}
               key={category.id}
             >
               {category.name}
-            </a>
+            </Link>
           ))}
         </nav>
         <ProjectGrid projects={filteredProjects} />

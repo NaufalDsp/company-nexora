@@ -15,7 +15,7 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
   }
 
   return (
-    <div className="project-grid">
+    <motion.div className="project-grid" layout>
       {projects.map((project, index) => (
         <ProjectCard
           index={index}
@@ -24,6 +24,7 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
           project={project}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
+import { motion } from "motion/react";

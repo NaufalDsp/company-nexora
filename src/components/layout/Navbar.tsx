@@ -1,3 +1,5 @@
+import { motion, useScroll, useTransform } from "motion/react";
+
 import { BrandLogo } from "../brand/BrandLogo";
 import { Container } from "../common/Container";
 import { MobileMenu } from "./MobileMenu";
@@ -10,8 +12,15 @@ const navigationItems = [
 ] as const;
 
 export function Navbar() {
+  const { scrollY } = useScroll();
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 96],
+    ["rgba(17, 18, 16, 0)", "rgba(17, 18, 16, 0.94)"],
+  );
+
   return (
-    <header className="navbar">
+    <motion.header className="navbar" style={{ backgroundColor }}>
       <Container className="navbar__inner">
         <a
           aria-label="Nexora Space — kembali ke beranda"
@@ -40,6 +49,6 @@ export function Navbar() {
 
         <MobileMenu />
       </Container>
-    </header>
+    </motion.header>
   );
 }
