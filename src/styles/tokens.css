@@ -1,0 +1,53 @@
+:root {
+  --color-ink-950: #111210;
+  --color-ink-900: #191a18;
+  --color-ink-800: #252623;
+  --color-concrete-700: #595b56;
+  --color-concrete-500: #858780;
+  --color-concrete-300: #c4c5bf;
+  --color-concrete-100: #e8e8e2;
+  --color-bone-50: #f5f3ec;
+  --color-white: #ffffff;
+
+  --color-accent-700: #9f4b2e;
+  --color-accent-600: #b95d39;
+  --color-accent-500: #d16c43;
+  --color-accent-300: #e8a182;
+
+  --color-success: #557a5a;
+  --color-warning: #b68132;
+  --color-danger: #a64c45;
+  --color-info: #4f6c78;
+
+  --font-display:
+    "Arial Narrow", "Aptos Display", "Helvetica Neue", Arial, sans-serif;
+  --font-body: Inter, Aptos, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Code", Consolas, monospace;
+
+  --container-max: 92.5rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1.125rem;
+
+  --duration-fast: 160ms;
+  --duration-normal: 320ms;
+  --duration-slow: 720ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-mechanical: cubic-bezier(0.65, 0, 0.35, 1);
+}

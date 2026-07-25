@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Nexora Space</title>
+  <desc id="desc">Varian gelap satu warna dari mark Nexora Space.</desc>
+  <g fill="#111210">
+    <path d="m145 109 66 37v52l-88 34-27-15v-59l31 17v20l55-21v-15l-37-21Z"/>
+    <path d="M24 47 145 114v29L55 93v99l-31-17Z"/>
+    <path d="m65 91 80 44v29l-49-27v76l-31-17Z"/>
+    <path d="m126 69 85-43v88Z"/>
+  </g>
+</svg>
+
