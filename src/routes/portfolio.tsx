@@ -54,6 +54,7 @@ export default function PortfolioPage({ loaderData }: Route.ComponentProps) {
         <nav className="portfolio-filter" aria-label="Filter kategori proyek">
           <Link
             aria-current={activeCategory === null ? "page" : undefined}
+            preventScrollReset
             to="/portfolio"
           >
             Semua
@@ -63,8 +64,9 @@ export default function PortfolioPage({ loaderData }: Route.ComponentProps) {
               aria-current={
                 activeCategory === category.slug ? "page" : undefined
               }
-              to={`/portfolio?category=${category.slug}`}
               key={category.id}
+              preventScrollReset
+              to={`/portfolio?category=${category.slug}`}
             >
               {category.name}
             </Link>
