@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 
 import { BrandLogo } from "../brand/BrandLogo";
 import { Container } from "../common/Container";
+import { ConsultationDialog } from "./ConsultationDialog";
 import { MobileMenu } from "./MobileMenu";
 import { navigationItems } from "./navigation-items";
 
@@ -34,9 +35,7 @@ export function Navbar() {
           </ul>
         </nav>
 
-        <a className="navbar__cta" href="/#konsultasi">
-          Mulai konsultasi
-        </a>
+        <ConsultationDialog />
 
         <MobileMenu />
       </Container>
