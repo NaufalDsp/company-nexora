@@ -50,3 +50,6 @@ Thumbs.db
 
 # Generated media
 public/generated/
+
+# Local Netlify folder
+.netlify

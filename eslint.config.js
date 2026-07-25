@@ -8,6 +8,7 @@ export default tseslint.config(
   {
     ignores: [
       ".react-router/**",
+      ".netlify/**",
       "build/**",
       "coverage/**",
       "eslint.config.js",

@@ -50,6 +50,7 @@
     "@axe-core/playwright": "4.12.1",
     "@cloudflare/vite-plugin": "1.47.0",
     "@eslint/js": "10.0.1",
+    "@netlify/vite-plugin-react-router": "4.0.0",
     "@playwright/test": "1.62.0",
     "@react-router/dev": "8.3.0",
     "@tailwindcss/vite": "4.3.3",
