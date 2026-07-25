@@ -5,8 +5,8 @@ import { BrandLogo } from "../brand/BrandLogo";
 
 const navigationItems = [
   { href: "/#beranda", label: "Beranda", number: "01" },
-  { href: "/#tentang", label: "Tentang", number: "02" },
-  { href: "/#layanan", label: "Layanan", number: "03" },
+  { href: "/#layanan", label: "Layanan", number: "02" },
+  { href: "/portfolio", label: "Portofolio", number: "03" },
   { href: "/#proses", label: "Proses", number: "04" },
 ] as const;
 

@@ -4,8 +4,8 @@ import { MobileMenu } from "./MobileMenu";
 
 const navigationItems = [
   { href: "/#beranda", label: "Beranda" },
-  { href: "/#tentang", label: "Tentang" },
   { href: "/#layanan", label: "Layanan" },
+  { href: "/portfolio", label: "Portofolio" },
   { href: "/#proses", label: "Proses" },
 ] as const;
 

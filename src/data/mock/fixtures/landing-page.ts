@@ -11,8 +11,8 @@ export const landingPageFixture = landingPageContentSchema.parse({
       "Nexora Space merancang transformasi ruang melalui perencanaan yang terukur, material yang relevan, dan pengerjaan yang menyatukan fungsi dengan karakter.",
     primaryCtaLabel: "Jelajahi layanan",
     primaryCtaHref: "#layanan",
-    secondaryCtaLabel: "Kenali pendekatan",
-    secondaryCtaHref: "#tentang",
+    secondaryCtaLabel: "Lihat portofolio",
+    secondaryCtaHref: "/portfolio",
     capabilities: [
       {
         label: "Fokus",
