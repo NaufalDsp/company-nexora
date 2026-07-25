@@ -1,30 +1,30 @@
 import { lazy, Suspense, useMemo, useRef, useState } from "react";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion, useScroll } from "motion/react";
+import type { RefObject } from "react";
 
 import { useDeviceTier } from "../../hooks/useDeviceTier";
 import { useHydrated } from "../../hooks/useHydrated";
 import { useSceneActivity } from "../../hooks/useSceneActivity";
+import { supportsWebGL } from "../../lib/webgl";
 import { HeroSceneFallback } from "./HeroSceneFallback";
 import { SceneErrorBoundary } from "./SceneErrorBoundary";
 
 const HeroRoomCanvas = lazy(() => import("./HeroRoomCanvas"));
 
-function supportsWebGL() {
-  try {
-    const canvas = document.createElement("canvas");
+type HeroSceneProps = {
+  scrollTargetRef: RefObject<HTMLElement | null>;
+};
 
-    return Boolean(canvas.getContext("webgl2") ?? canvas.getContext("webgl"));
-  } catch {
-    return false;
-  }
-}
-
-export function HeroScene() {
+export function HeroScene({ scrollTargetRef }: HeroSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isHydrated = useHydrated();
   const deviceTier = useDeviceTier();
   const isActive = useSceneActivity(containerRef);
   const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: scrollTargetRef,
+    offset: ["start start", "end end"],
+  });
   const [hasFailed, setHasFailed] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const sceneTier = deviceTier === "high" ? "high" : "medium";
@@ -51,6 +51,7 @@ export function HeroScene() {
               active={isActive}
               onError={() => setHasFailed(true)}
               onReady={() => setIsReady(true)}
+              scrollProgress={scrollYProgress}
               tier={sceneTier}
             />
           </Suspense>

@@ -1,0 +1,11 @@
+@media (min-width: 56.0625rem) {
+  .hero {
+    min-height: 138svh;
+  }
+
+  .hero__layout {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+  }
+}

@@ -1,7 +1,10 @@
+import { useRef } from "react";
+
 import { ButtonLink } from "../../components/common/ButtonLink";
 import { Container } from "../../components/common/Container";
 import { HeroScene } from "../../components/three/HeroScene";
 import type { LandingPageContent } from "../../data/contracts/public-content";
+import "../../styles/hero-scroll.css";
 
 type HeroSectionProps = {
   conceptNotice: string;
@@ -9,8 +12,10 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ conceptNotice, content }: HeroSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section className="hero" id="beranda">
+    <section className="hero" id="beranda" ref={sectionRef}>
       <div className="hero__blueprint" aria-hidden="true" />
       <Container className="hero__layout">
         <div className="hero__content">
@@ -37,7 +42,7 @@ export function HeroSection({ conceptNotice, content }: HeroSectionProps) {
           role="img"
           aria-label="Ilustrasi abstrak ruang modular Nexora Space"
         >
-          <HeroScene />
+          <HeroScene scrollTargetRef={sectionRef} />
         </div>
       </Container>
 
