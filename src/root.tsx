@@ -13,16 +13,20 @@ import { INITIAL_LOADER_SESSION_KEY } from "./components/motion/InitialLoader";
 import "./styles/global.css";
 
 const loaderSessionBootstrap = `
-  try {
-    const hasSeenLoader =
-      sessionStorage.getItem(${JSON.stringify(INITIAL_LOADER_SESSION_KEY)}) === "true";
-    const shouldReduceMotion =
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let hasSeenLoader = false;
 
-    if (hasSeenLoader || shouldReduceMotion) {
-      document.documentElement.dataset.introHidden = "true";
-    }
+  try {
+    hasSeenLoader =
+      sessionStorage.getItem(${JSON.stringify(INITIAL_LOADER_SESSION_KEY)}) === "true";
   } catch {}
+
+  const shouldReduceMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (hasSeenLoader || shouldReduceMotion) {
+    document.documentElement.dataset.introHidden = "true";
+    document.documentElement.dataset.introReady = "true";
+  }
 `;
 
 export const links = () => [

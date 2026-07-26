@@ -1,7 +1,7 @@
 import { useEffect, useState, type RefObject } from "react";
 
 export function useSceneActivity(ref: RefObject<HTMLElement | null>) {
-  const [isIntersecting, setIsIntersecting] = useState(true);
+  const [isIntersecting, setIsIntersecting] = useState(false);
   const [isDocumentVisible, setIsDocumentVisible] = useState(true);
 
   useEffect(() => {

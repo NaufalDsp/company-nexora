@@ -1,11 +1,12 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
+import { markIntroReady } from "../../hooks/useIntroReady";
 import { BrandLogo } from "../brand/BrandLogo";
 
 export const INITIAL_LOADER_SESSION_KEY = "nexora-space:intro-seen";
-const STANDARD_DURATION_MS = 1600;
-const REDUCED_DURATION_MS = 180;
+const STANDARD_DURATION_MS = 1450;
+const EXIT_DURATION_MS = 520;
 
 function hasSeenLoader() {
   try {
@@ -28,27 +29,31 @@ export function InitialLoader() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    if (hasSeenLoader()) {
+    if (hasSeenLoader() || shouldReduceMotion) {
+      markLoaderAsSeen();
+      markIntroReady();
       const timeout = window.setTimeout(() => setIsVisible(false), 0);
 
       return () => window.clearTimeout(timeout);
     }
 
     const previousOverflow = document.body.style.overflow;
-    const duration = shouldReduceMotion
-      ? REDUCED_DURATION_MS
-      : STANDARD_DURATION_MS;
 
     document.body.style.overflow = "hidden";
 
-    const timeout = window.setTimeout(() => {
+    const hideTimeout = window.setTimeout(() => {
       document.body.style.overflow = previousOverflow;
       markLoaderAsSeen();
       setIsVisible(false);
-    }, duration);
+    }, STANDARD_DURATION_MS);
+    const readyTimeout = window.setTimeout(
+      markIntroReady,
+      STANDARD_DURATION_MS + EXIT_DURATION_MS,
+    );
 
     return () => {
-      window.clearTimeout(timeout);
+      window.clearTimeout(hideTimeout);
+      window.clearTimeout(readyTimeout);
       document.body.style.overflow = previousOverflow;
     };
   }, [shouldReduceMotion]);
@@ -59,15 +64,18 @@ export function InitialLoader() {
         <motion.div
           className="initial-loader"
           aria-hidden="true"
-          exit={
-            shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: "-100%" }
-          }
+          exit={{ opacity: 0, scale: 1.012 }}
           transition={{
-            duration: shouldReduceMotion ? 0.12 : 0.6,
-            ease: [0.65, 0, 0.35, 1],
+            duration: 0.48,
+            ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <div className="initial-loader__grid" />
+          <motion.div
+            animate={{ opacity: 1, scale: 1 }}
+            className="initial-loader__grid"
+            initial={{ opacity: 0.35, scale: 1.025 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          />
           <span className="initial-loader__corner initial-loader__corner--top" />
           <span className="initial-loader__corner initial-loader__corner--bottom" />
 
@@ -80,8 +88,12 @@ export function InitialLoader() {
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="initial-loader__brand"
-              initial={{ opacity: 0, y: 18 }}
-              transition={{ duration: 0.55, delay: 0.12 }}
+              initial={{ opacity: 0, y: 12 }}
+              transition={{
+                duration: 0.72,
+                delay: 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <BrandLogo />
               <p>Raw structure. Refined space.</p>
@@ -98,8 +110,8 @@ export function InitialLoader() {
                   animate={{ scaleX: 1 }}
                   initial={{ scaleX: 0 }}
                   transition={{
-                    duration: shouldReduceMotion ? 0 : 1.15,
-                    ease: [0.65, 0, 0.35, 1],
+                    duration: 1.25,
+                    ease: [0.4, 0, 0.2, 1],
                   }}
                 />
               </div>

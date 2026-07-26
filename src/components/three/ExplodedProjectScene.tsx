@@ -5,6 +5,7 @@ import type { RefObject } from "react";
 import type { Project } from "../../data/contracts/portfolio";
 import { useDeviceTier } from "../../hooks/useDeviceTier";
 import { useHydrated } from "../../hooks/useHydrated";
+import { useIntroReady } from "../../hooks/useIntroReady";
 import { useSceneActivity } from "../../hooks/useSceneActivity";
 import { supportsWebGL } from "../../lib/webgl";
 import { ExplodedSceneFallback } from "./ExplodedSceneFallback";
@@ -25,6 +26,7 @@ export function ExplodedProjectScene({
   const isHydrated = useHydrated();
   const deviceTier = useDeviceTier();
   const isActive = useSceneActivity(containerRef);
+  const isIntroReady = useIntroReady();
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: scrollTargetRef,
@@ -37,7 +39,12 @@ export function ExplodedProjectScene({
     [isHydrated],
   );
   const shouldRenderScene =
-    canUseWebGL && deviceTier !== "low" && !shouldReduceMotion && !hasFailed;
+    isIntroReady &&
+    isActive &&
+    canUseWebGL &&
+    deviceTier !== "low" &&
+    !shouldReduceMotion &&
+    !hasFailed;
   const sceneTier = deviceTier === "high" ? "high" : "medium";
 
   return (

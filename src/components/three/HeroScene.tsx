@@ -4,6 +4,7 @@ import type { RefObject } from "react";
 
 import { useDeviceTier } from "../../hooks/useDeviceTier";
 import { useHydrated } from "../../hooks/useHydrated";
+import { useIntroReady } from "../../hooks/useIntroReady";
 import { useSceneActivity } from "../../hooks/useSceneActivity";
 import { supportsWebGL } from "../../lib/webgl";
 import { HeroSceneFallback } from "./HeroSceneFallback";
@@ -20,6 +21,7 @@ export function HeroScene({ scrollTargetRef }: HeroSceneProps) {
   const isHydrated = useHydrated();
   const deviceTier = useDeviceTier();
   const isActive = useSceneActivity(containerRef);
+  const isIntroReady = useIntroReady();
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: scrollTargetRef,
@@ -33,7 +35,12 @@ export function HeroScene({ scrollTargetRef }: HeroSceneProps) {
     [isHydrated],
   );
   const shouldRenderScene =
-    canUseWebGL && deviceTier !== "low" && !shouldReduceMotion && !hasFailed;
+    isIntroReady &&
+    isActive &&
+    canUseWebGL &&
+    deviceTier !== "low" &&
+    !shouldReduceMotion &&
+    !hasFailed;
 
   return (
     <div
