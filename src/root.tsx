@@ -9,7 +9,21 @@ import {
 
 import type { Route } from "./+types/root";
 import { PageShell } from "./components/layout/PageShell";
+import { INITIAL_LOADER_SESSION_KEY } from "./components/motion/InitialLoader";
 import "./styles/global.css";
+
+const loaderSessionBootstrap = `
+  try {
+    const hasSeenLoader =
+      sessionStorage.getItem(${JSON.stringify(INITIAL_LOADER_SESSION_KEY)}) === "true";
+    const shouldReduceMotion =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (hasSeenLoader || shouldReduceMotion) {
+      document.documentElement.dataset.introHidden = "true";
+    }
+  } catch {}
+`;
 
 export const links = () => [
   {
@@ -21,7 +35,7 @@ export const links = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta
@@ -29,6 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta name="theme-color" content="#111210" />
+        <script dangerouslySetInnerHTML={{ __html: loaderSessionBootstrap }} />
         <Meta />
         <Links />
       </head>
