@@ -34,17 +34,18 @@ export function HeroScene({ scrollTargetRef }: HeroSceneProps) {
     () => isHydrated && supportsWebGL(),
     [isHydrated],
   );
-  const shouldRenderScene =
+  const canRenderScene =
     isIntroReady &&
-    isActive &&
     canUseWebGL &&
     deviceTier !== "low" &&
     !shouldReduceMotion &&
     !hasFailed;
+  const shouldRenderScene = canRenderScene && (isActive || isReady);
+  const isSceneVisible = shouldRenderScene && isReady;
 
   return (
     <div
-      className={`hero-scene${isReady ? " hero-scene--ready" : ""}`}
+      className={`hero-scene${isSceneVisible ? " hero-scene--ready" : ""}`}
       data-device-tier={deviceTier}
       data-render-mode={shouldRenderScene ? "webgl" : "fallback"}
       ref={containerRef}
@@ -66,7 +67,9 @@ export function HeroScene({ scrollTargetRef }: HeroSceneProps) {
       ) : null}
 
       <span className="hero-scene__status" aria-hidden="true">
-        {isReady ? `WEBGL / ${deviceTier.toUpperCase()}` : "DOM / FALLBACK"}
+        {isSceneVisible
+          ? `WEBGL / ${deviceTier.toUpperCase()}`
+          : "DOM / FALLBACK"}
       </span>
     </div>
   );

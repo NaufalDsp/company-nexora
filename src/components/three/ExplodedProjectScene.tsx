@@ -38,18 +38,21 @@ export function ExplodedProjectScene({
     () => isHydrated && supportsWebGL(),
     [isHydrated],
   );
-  const shouldRenderScene =
+  const canRenderScene =
     isIntroReady &&
-    isActive &&
     canUseWebGL &&
     deviceTier !== "low" &&
     !shouldReduceMotion &&
     !hasFailed;
+  const shouldRenderScene = canRenderScene && (isActive || isReady);
+  const isSceneVisible = shouldRenderScene && isReady;
   const sceneTier = deviceTier === "high" ? "high" : "medium";
 
   return (
     <div
-      className={`exploded-scene${isReady ? " exploded-scene--ready" : ""}`}
+      className={`exploded-scene${
+        isSceneVisible ? " exploded-scene--ready" : ""
+      }`}
       data-device-tier={deviceTier}
       data-render-mode={shouldRenderScene ? "webgl" : "fallback"}
       ref={containerRef}
@@ -71,7 +74,9 @@ export function ExplodedProjectScene({
       ) : null}
 
       <span className="exploded-scene__status" aria-hidden="true">
-        {isReady ? `ASSEMBLY / ${deviceTier.toUpperCase()}` : "DOM / FALLBACK"}
+        {isSceneVisible
+          ? `ASSEMBLY / ${deviceTier.toUpperCase()}`
+          : "DOM / FALLBACK"}
       </span>
     </div>
   );
