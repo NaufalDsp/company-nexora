@@ -6,7 +6,7 @@
   "packageManager": "npm@11.7.0",
   "description": "Portfolio-quality company profile for the fictional Nexora Space renovation and interior brand.",
   "engines": {
-    "node": ">=22.22.0",
+    "node": "24.x",
     "npm": ">=11.0.0"
   },
   "scripts": {
@@ -50,7 +50,6 @@
     "@axe-core/playwright": "4.12.1",
     "@cloudflare/vite-plugin": "1.47.0",
     "@eslint/js": "10.0.1",
-    "@netlify/vite-plugin-react-router": "4.0.0",
     "@playwright/test": "1.62.0",
     "@react-router/dev": "8.3.0",
     "@tailwindcss/vite": "4.3.3",

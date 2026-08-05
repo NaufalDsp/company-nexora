@@ -1,8 +1,7 @@
-import netlifyReactRouter from "@netlify/vite-plugin-react-router";
 import tailwindcss from "@tailwindcss/vite";
 import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), netlifyReactRouter()],
+  plugins: [tailwindcss(), reactRouter()],
 });

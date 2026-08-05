@@ -51,5 +51,6 @@ Thumbs.db
 # Generated media
 public/generated/
 
-# Local Netlify folder
-.netlify
+# Local deployment tool folders
+.netlify/
+.vercel/
